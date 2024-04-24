@@ -1,5 +1,14 @@
 #! usr/bin/python3
 
+# Usage
+# python3 xpath_config.py 
+# python3 xpath_config.py system/services
+# python3 xpath_config.py ./@changed-localtime
+# python3 xpath_config.py system/login/user/id
+# python3 xpath_config.py "system/login/user[name='admin']/id"
+# python3 xpath_config.py 'interfaces/interface[starts-with(name, "ge")]'
+# python3 xpath_config.py 'interfaces/interface[name="lo0" or name="fxp0"]'
+
 from jnpr.junos import Device
 from lxml.tree import dump, _Element
 from sys import argv
