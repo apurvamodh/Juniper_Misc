@@ -1,0 +1,9 @@
+---
+all:
+  children:
+    switches:
+      hosts:
+        ansible-switch-1:
+          ansible_host: "10.85.168.50"
+        ansible-switch-2:
+          ansible-host: "10.85.168.51"

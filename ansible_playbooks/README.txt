@@ -1,0 +1,19 @@
+To execute ansible playbooks, we need to run ansible in the python vitual env.
+
+=> Steps to activate python virtual env
+
+python3.7 -m venv ansible-env
+source ansible-env/bin/activate
+
+example -
+```
+root@kinshukc-ubuntu16-vm1:~/amodh_scripts/ansible# 
+root@kinshukc-ubuntu16-vm1:~/amodh_scripts/ansible# python3.7 --version
+Python 3.7.12
+root@kinshukc-ubuntu16-vm1:~/amodh_scripts/ansible# python3.7 -m venv ansible-env
+root@kinshukc-ubuntu16-vm1:~/amodh_scripts/ansible# source ansible-env/bin/activate
+(ansible-env) root@kinshukc-ubuntu16-vm1:~/amodh_scripts/ansible# 
+```
+
+pip install --upgrade pip
+pip install ansible

@@ -1,0 +1,24 @@
+---
+# This playbook will execute RPC on the target device listed under inventory/inventory.yaml
+
+- name: Retrieve Interface Status
+  hosts: all
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: Send CLI commands to remote device
+      juniper_junos_rpc:
+        user: "root"
+        passwd: "Juniper"
+
+        rpc: get_route_information
+
+      # save the output by register keyword into cmd_output  
+      register: result
+
+    - name: "Print result"
+      debug:
+        var: result
