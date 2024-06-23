@@ -1,4 +1,5 @@
 To execute ansible playbooks, we need to run ansible in the python vitual env.
+For more details, watch this - https://www.youtube.com/watch?v=zhgZbaqL3Rk
 
 => Steps to activate python virtual env
 
