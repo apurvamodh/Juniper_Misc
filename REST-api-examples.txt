@@ -1,0 +1,10 @@
+1. Single RPC through http
+
+curl -k -u "labroot:lab123" "http://10.85.168.50:3030/rpc/get-interface-information@format=text?interface-name=em0&terse="
+Interface               Admin Link Proto    Local                 Remote
+em0                     up    up
+em0.0                   up    up   inet     10.85.168.50/25
+
+2. Multiple RPCs in a single get request
+
+curl -k -u "labroot:lab123" "http://10.85.168.50:3030/rpc" -d "<get-interface-information><terse/></get-interface-information><get-bgp-summary-information/>@format=text"
