@@ -1,3 +1,6 @@
+Junos REST http default port - tcp 3000
+Junos REST https default port - tcp 3443
+
 1. Single RPC through http
 
 curl -k -u "labroot:lab123" "http://10.85.168.50:3030/rpc/get-interface-information@format=text?interface-name=em0&terse="
@@ -8,3 +11,7 @@ em0.0                   up    up   inet     10.85.168.50/25
 2. Multiple RPCs in a single get request
 
 curl -k -u "labroot:lab123" "http://10.85.168.50:3030/rpc" -d "<get-interface-information><terse/></get-interface-information><get-bgp-summary-information/>@format=text"
+
+3. Get active route information from inet.0
+
+curl -k -u "labroot:lab123" "http://10.1.1.1:3030/rpc/get-route-information@format=text?active-path=&table=inet.0"

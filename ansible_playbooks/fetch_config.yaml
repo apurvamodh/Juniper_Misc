@@ -1,0 +1,17 @@
+---
+- name: "Get Junos OS configuration."
+  hosts: all
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: "Get committed configuration"
+      juniper_junos_config:
+        user: "root"
+        passwd: "Juniper"
+        retrieve: "committed"
+      register: response
+    - name: "Print result"
+      debug:
+        var: response
